@@ -25,15 +25,8 @@
                 <div class="container-edit-icon"><img class="edit-icon" src="../img/edit-icons/repeats.png" onclick="createChangeHTML(EnumChangeType.REPEATS);"></div>
                 <div class="container-edit-icon"><img class="edit-icon" src="../img/edit-icons/style.png" onclick="createChangeHTML(EnumChangeType.STYLE);"></div>
                 <div class="container-edit-icon"><img class="edit-icon" src="../img/edit-icons/thesaurus.png" onclick="createChangeHTML(EnumChangeType.THESAURUS);"></div>
-            <button id="btnFinishMarking" onclick="showPanelFinalMessage();">Finish Marking</button>
+            <button id="btnFinishMarking" onclick="finish();">Finish Marking</button>
         </div>
-        <div id="panelFinalMessage">
-            <h2>Finish Editing</h2>
-            <textarea id="txtFinalMessage" type="text" rows="9" placeholder="Final Edit Message..." onkeydown="updateCharacterCounter();" onkeyup="updateCharacterCounter();"></textarea>
-            <button id="btnShowPanelMark" onclick="showPanelMark();">Back</button>
-            <button id="btnSubmitChanges" onclick="postChanges();">Submit Edits</button>
-        </div>
-    
         <div id="textAreaCounter"></div>
     </div>
     <div id="popup" class="hidden">

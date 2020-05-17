@@ -1,12 +1,5 @@
 <?php
 require_once('dbconnect.php');
-$servername = "35.203.5.122";
-$username = "root";
-$password = "harshilpicopenis123";
-$db = "skiptheedits";
-
-$conn = mysqli_connect($servername, $username, $password, $db);
-
 
 if(isset($_POST['register'])){
     $username = mysqli_real_escape_string($conn, $_POST['username']);
