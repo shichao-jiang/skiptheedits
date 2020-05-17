@@ -78,11 +78,7 @@ body {
 }
 
 .submitbuttons:hover {
-  background-color: #3F5BEB;
-}
-
-.submitbuttons:focus {
-  background-color: #1DFF82;
+  background-color: #263ca8;
 }
 
 #continue {

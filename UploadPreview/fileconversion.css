@@ -5,8 +5,82 @@ body {
   background-color: #FBFBFB;
 }
 
+textarea  
+{  
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 12px;   
+}
+
 .main {
     padding-top: 1%;
     text-align: center;
 }
   
+.preview {
+    background: #fff;
+    box-shadow:
+      /* The top layer shadow */
+      0 -1px 1px rgba(0,0,0,0.15),
+      /* The second layer */
+      0 -10px 0 -5px #eee,
+      /* The second layer shadow */
+      0 -10px 1px -4px rgba(0,0,0,0.15),
+       /* The third layer */
+      0 -20px 0 -10px #eee,
+      /* The third layer shadow */
+      0 -20px 1px -9px rgba(0,0,0,0.15);
+      /* Padding for demo purposes */
+      padding: 50px;
+      padding-top: 50px;
+      margin-top: 20px;
+      margin-left: 30px;
+      margin-right: 50px;
+      height: 400px;
+      width: 800px;
+    white-space: pre-wrap;
+    float: left;
+}
+
+.inputbox {
+    float: right;
+    margin-right: 200px;
+    text-align: center;
+    width: 600px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#inp {
+    resize: none;
+    width: 100%;
+    height: 30%;
+    padding: 12px 20px;
+}
+
+::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.submitbuttons {
+    background-color: #4A86E8;
+    border: none;
+    width: 100%;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .submitbuttons:hover {
+    background-color: #3F5BEB;
+  }

@@ -108,36 +108,34 @@ include($_SERVER['DOCUMENT_ROOT'].'/skiptheedits/skiptheedits/header/header.html
 
 <!DOCTYPE html>
 <html lang="en">
-<link href="uploadpage.css" rel="stylesheet" type="text/css">
+<link href="fileconversion.css" rel="stylesheet" type="text/css">
 <link href="../default.css" rel="stylesheet" type="text/css">
 <link rel="icon" href="favicon.jpg">
 <header id='#header-main'></header>
 <body>
 <header id='header-secondary'>
     <h1>
-    TEXT GORES HERE
+    Preview File
     </h1>    
 </header>    
-    <p style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;"> Preview of the File you are About to upload: </p>
     <br>
-    <div type="text" name="preview">
+    <div type="text" class="preview" name="preview">
     <?php 
-    custom_echo($docText, 900); 
+    custom_echo($docText, 2048); 
     ?>
     </div>
+    <div class="inputbox">
 <form action="../UploadSuccess/upload.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="body" value="<?php echo $docText; ?>"></input>
     <br>
-    <label for="Title">Title:</label>
-    <input type="text" id="title" name="title"><br><br>
-    <label for="instructions">Instructions:</label>
-    <input type="text" id="instructions" name="instructions"><br><br>
-    Click button to proceed:
+    <input type="text" name="title" placeholder="Title"><br><br>
+    <textarea type="text" id="inp" name="instructions" placeholder="Instructions"></textarea><br><br>
     <br>
-    <input type="submit" name="submit" value="Upload">
+    <input type="submit" class="submitbuttons" name="submit" value="Upload">
 </form>
 <form action="../UploadPage/uploadpage.php">
-    <input type="submit" value="goback" name="Cancel" id="frm1_submit" />
+    <input type="submit" class="submitbuttons" style="margin-top: 15px;" value="Go Back"  name="Cancel" id="frm1_submit" />
+    </div>
 </form>
 </body>
 </html>

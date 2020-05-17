@@ -24,7 +24,7 @@
 <body>
 <header id='header-secondary'>
     <h1>
-    TEXT GORES HERE
+    UPLOAD A FILE
     </h1>    
 </header>    
 <div class="main">
