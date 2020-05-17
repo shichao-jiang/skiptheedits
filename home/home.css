@@ -103,7 +103,7 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-content: flex-start;
-    overflow: hidden;
+    overflow-x: hidden;
     padding-bottom: 0.9375rem;
 }
 
