@@ -1,18 +1,28 @@
-<?php foreach ($essays as $essay): ?>
+<?php 
+function custom_echo($x, $length)
+{
+    if(strlen($x)<=$length) {
+        echo $x;
+    }
+    else {
+        $y=substr($x,0,$length) . '...';
+        echo $y;
+    }
+}
+?>
+
+<?php foreach ($essay as $essays): ?>
     <div class="content tile">
-        <?php if ($essay['editorType'] == 'premium'): ?>
-            <img src="../img/star.png" class="premium">
-        <?php endif ?>
-        <p class="essayname"><?php echo $essay['title'] ?></p>
+        <p class="essayname"><?php echo $essays['title'] ?></p>
         <div class="preview">
-            <?php echo file_get_contents('../files/' . $essay['id'] . '.txt', true) ?>
+            <?php custom_echo($essays['body'], 900);  ?>
         </div>
         <div class="desc">
-            <p class="essaytitle"><?php echo $essay['title'] ?></p>
-            <p class=""><?php echo $essay['instructions'] ?></p>
+            <p class="essaytitle"><?php echo $essays['title'] ?></p>
+            <p class=""><?php echo $essays['descrip'] ?></p>
             <div class="buttonbar">
-                <a href="../view?id=<?php echo $essay['id'] ?>">View</a>
-                <a href="../edit?id=<?php echo $essay['id'] ?>">Edit</a>
+                <a href="../view?id=<?php echo $essays['id'] ?>">View</a>
+                <a href="../edit?id=<?php echo $essays['id'] ?>">Edit</a>
             </div>
         </div>
     </div>

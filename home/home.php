@@ -22,7 +22,7 @@
     <?php include_once "../header/header.html" ?>
     <header id="header-secondary">
         <h1>Edit an Essay</h1>
-        <h2><?php echo count($essays) . " Essays found" ?></h2>
+        <h2><?php echo $count . " Essays found" ?></h2>
     </header>
     <div class="rows">
         <div class="col-5">
@@ -38,8 +38,6 @@
         <div class="col-15" style="padding:0">
             <div id="menubar">
                 <h3>All Essays</h3>
-                <span><a href="../home/?sort=free" id="free">Free</a></span>
-                <span><a href="../home/?sort=premium" id="premium">Premium</a></span>
                 <span><a href="../home/?sort=newest" id="newest">Newest</a></span>
             </div>
             <div id="essays">
