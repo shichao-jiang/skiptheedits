@@ -15,9 +15,9 @@ function display() {
             div = document.createElement("div");
             div.setAttribute("class", "comment");
             div.setAttribute("id", edit.uuid + "-com")
-            div.innerHTML = edit.uuid;
+            div.innerHTML = edit.edit;
             div.style.top = edit.pos.top + body.scrollTop;
-            div.style.left = "49rem";
+            div.style.left = "calc(40rem + (40% - 22rem))";
             body.appendChild(div);
         }
     });
@@ -41,6 +41,7 @@ function edit(type) {
         var s = window.getSelection();
         var oRange = s.getRangeAt(0);
         var oRect = oRange.getBoundingClientRect();
+        var comment = document.getElementById("comment").value;
 
         if (type) {
             var newtext = gay.innerHTML.slice(0, index) + "<mark id='" + uuid + "'>" + gay.innerHTML.slice(index, index2) + "</mark>" + gay.innerHTML.slice(index2);
@@ -50,7 +51,7 @@ function edit(type) {
             gay.innerHTML = newtext;
         }
 
-        edits.push({uuid:uuid, pos:oRect, edit:edit});
+        edits.push({uuid:uuid, pos:oRect, edit:comment});
         document.getElementById("popup").setAttribute("class", "hidden");
     }
 }
@@ -69,4 +70,27 @@ function popup(event) {
     } else {
         popup.setAttribute("class", "hidden");
     }
+}
+
+function sendEdit(edit) {
+    xhr = new XMLHttpRequest();
+    xhr.open('POST', 'send.php', true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhr.onload = function() {
+        if (this.status == 200) {
+            alert("Success");
+        }
+    }
+
+    params = "uuid=" + edit.uuid + "&pos=" + edit.pos + "&edit=" + edit.edit;
+    xhr.send(params);
+}   
+
+function finish() {
+    edits.forEach(edit => {
+        sendEdit(edit);
+    });
+
+    window.location.replace('../home.home.php');
 }
