@@ -10,8 +10,8 @@
     </div>
     
     <div id="popup" class="hidden">
-        <button onclick="edit(0)">&times;</button>
-        <button onclick="edit(1)" style="background-color:yellow">pp</button>
+        <button onclick="edit(0); display()">&times;</button>
+        <button onclick="edit(1); display()" style="background-color:yellow">pp</button>
     </div>
 </body>
 </html>
