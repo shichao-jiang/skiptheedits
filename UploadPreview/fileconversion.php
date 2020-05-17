@@ -103,7 +103,7 @@ function custom_echo($x, $length)
 $path = '../' . $file_name;
 !unlink($path);
 
-include($_SERVER['DOCUMENT_ROOT'].'/skiptheedits/skiptheedits/header/header.html');
+include('../header/header.html');
 ?>
 
 <!DOCTYPE html>
