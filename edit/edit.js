@@ -88,7 +88,6 @@ function sendEdit(edit) {
 
     xhr.onload = function() {
         if (this.status == 200) {
-            alert(this.responseText);
         }
     }
 
@@ -101,5 +100,19 @@ function finish() {
         sendEdit(edit);
     });
 
-    //window.location.replace('../home/home.php');
+    var editor = document.getElementById("editor");
+
+    xhr = new XMLHttpRequest();
+    xhr.open('POST', 'send2.php', true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhr.onload = function() {
+        if (this.status == 200) {
+            alert(this.responseText);
+            //window.location.replace('../home/home.php');
+        }
+    }
+
+    params = "text=" + editor.innerHTML;
+    xhr.send(params);   
 }

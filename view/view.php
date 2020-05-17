@@ -18,7 +18,23 @@
             <?php echo $_SESSION['essay']['body'] ?>
         </div>
     </div>
-    <?php include_once('load.php') ?>
+    <?php
+        $edits = array();
+    
+        $sq2 = "SELECT * FROM edits WHERE essay_id='$essay_id'";
+        $result2 = mysqli_query($conn, $sq2);
+    
+        while ($row = $result2->fetch_assoc()) {
+            $edits[] = $row;
+        }
+    
+        foreach ($edits as $edit) {?>
+            <div class="comment" id=<?php echo $edit['uuid']?> style="top:<?php echo $edit['pos']?>px; left:calc(50% + 21rem)">
+                <?php echo $edit['edit'] ?>
+            </div>
+        <?php
+        }
+    ?>
     <script src="edit.js"></script>
 </body>
 </html>
