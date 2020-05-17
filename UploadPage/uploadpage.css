@@ -8,8 +8,9 @@ body {
 .accent {
     background-color: #4A86E8;
     text-align: center;
+    margin-top: 2.7rem;
     padding: 5%;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Arial', sans-serif;
     font-size: 50px;
     color: white;
 }

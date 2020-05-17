@@ -11,18 +11,23 @@
             $msg = "error";
         }
     }
-
+    include($_SERVER['DOCUMENT_ROOT'].'/skiptheedits/skiptheedits/header/header.html');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Upload</title>
-</head>
+<link href="uploadpage.css" rel="stylesheet" type="text/css">
+<link href="../default.css" rel="stylesheet" type="text/css">
+<link rel="icon" href="favicon.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+<header id='#header-main'></header>
 <body>
-<div>
+<header id='header-secondary'>
+    <h1>
+    TEXT GORES HERE
+    </h1>    
+</header>    
+<div class="main">
     <form action="uploadpage.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="size" value="100000">
         <div>
