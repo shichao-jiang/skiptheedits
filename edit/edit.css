@@ -10,7 +10,7 @@
     padding: 5rem;
     margin: 1rem auto;
     width: 40rem;
-    height: 51.8rem;
+    min-height: 51.8rem;
     line-height: 1.25rem;
 }
 
@@ -113,10 +113,6 @@
     box-shadow: 1px 1px 1px black;
 }
 
-#panelFinalMessage {
-    display: none;
-}
-
 #textAreaCounter {
     font-family: arial;
     margin-top: 1rem;
@@ -132,6 +128,7 @@ textarea {
     display: block;
     position: absolute;
     margin: 0;
+    width: 14rem;
     padding: 1rem;
     z-index: 1;
     background-color: white;

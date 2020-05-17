@@ -1,14 +1,18 @@
 <?php
     require_once('../dbconnect.php');
     
-    $essay_id = $_GET['id'];
+    $essay_id = $_SESSION['essay_id'];
     $user_id = $_SESSION['user']['id'];
-    $uuid = msqli_real_escape_string($conn, $_POST['uuid']);
-    $pos = msqli_real_escape_string($conn, $_POST['pos']);
-    $edit = msqli_real_escape_string($conn, $_POST['edit']);
+    $uuid = mysqli_real_escape_string($conn, $_POST['uuid']);
+    $pos = serialize(mysqli_real_escape_string($conn, $_POST['pos']));
+    $edit = mysqli_real_escape_string($conn, $_POST['edit']);
     $date = gmdate('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO edits (essay_id, user_id, uuid, pos, edit) VALUES ('$essay_id', '$user_id', '$uuid', '$pos', '$edit', '$date')";
+    $sql = "INSERT INTO edits (essay_id, userid, uuid, pos, edit) VALUES ('$essay_id', '$user_id', '$uuid', '$pos', '$edit')";
 
-    mysqli_query($conn, $sql);
+    if (mysqli_query($conn, $sql)) {
+        echo "Success";
+    } else {
+        echo mysqli_error($conn);
+    }
 ?>
