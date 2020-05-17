@@ -1,5 +1,7 @@
 #body {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 #editor {
@@ -37,8 +39,8 @@
 #containerLeft {
     display: block;
     position: absolute;
-    width: 70%;
-    margin: 2rem;
+    width: 100%;
+    margin: 2rem 0;
 }
 
 #containerLeft h1 {
@@ -46,74 +48,6 @@
     font-size: 2rem;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-
-#containerRight {
-    margin: 2em;
-    width: 24em;
-    right: 0;
-    border: 0.05em solid black;
-    text-align: center;
-    padding-bottom: 1em;
-    position: fixed;
-    display: block;
-    transition-duration: 0.1s;
-    background-color: white;
-}
-
-#containerRight h2 {
-    font-size: 1.5em;
-    font-family: Arial;
-    text-align: center;
-    padding: 1em;
-    background-color: #4A86E8;
-    color: #FFFFFF;
-}
-
-.container-edit-icon {
-    float: left;
-    background-color: #1955C39C;
-}
-
-
-.edit-icon {
-    float: left;
-    padding: 0;
-    margin: 0;
-    background-color: #FFFFFF;
-}
-
-.container-edit-icon, .edit-icon {
-    width: 4.8em;
-}
-
-.edit-icon:hover {
-    opacity: 0.7;
-    transition-duration: 0.25s;
-}
-
-.edit-icon:active {
-    opacity: 0.25;
-}
-
-#richTextField {
-    background-color: #FFFFFF;
-    width: inherit;
-    height: 51.8em;
-    margin-top: 3em;
-    box-shadow: 1px 1px 1px black;
-}
-
-#textAreaCounter {
-    font-family: arial;
-    margin-top: 1rem;
-}
-
-textarea {
-    width: 97%;
-    margin-top: 2em;
-    font-family: Arial;
 }
 
 .comment {
