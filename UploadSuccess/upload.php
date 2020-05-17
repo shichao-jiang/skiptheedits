@@ -18,9 +18,9 @@ if (isset($_POST['submit'])) {
   $title = mysqli_real_escape_string($conn, $_POST['title']);
   $desc = mysqli_real_escape_string($conn, $_POST['instructions']);
   $body = mysqli_real_escape_string($conn, $_POST['body']);
-  echo $title, $desc, $body;
 	
   $sql = "INSERT INTO essays (title, descrip, body) VALUES ('$title', '$desc', '$body')";
   mysqli_query($conn, $sql);
 
+  header("Location: ../home/home.php");
 }
