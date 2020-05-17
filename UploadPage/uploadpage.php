@@ -1,7 +1,7 @@
 <?php
     $msg = "";
     if (isset($_POST['upload'])) {
-        $target = "../skiptheedits/".basename($_FILES['document']['name']);
+        $target = "../".basename($_FILES['document']['name']);
 
         $document = $_FILES['document']['name'];
 
@@ -28,19 +28,22 @@
     </h1>    
 </header>    
 <div class="main">
-    <form action="uploadpage.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="size" value="100000">
-        <div>
-            <input type="file" name="document">
-        </div>
-        <div>
-            <input type="submit" name="upload" value="upload doc">
-        </div>
-    </form>
-    <form action="fileconversion.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="filename" value="<?php echo $_FILES['document']['name']?>">
-        <input type="submit" name="continue" value="preview doc">
-    </form>
+    <div class="inputsec"> 
+        <form action="uploadpage.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="size" value="100000">
+            <div class="fileupload">
+            <label class="inputfile" >
+            Browse...
+                <input type="file"  name="document">
+            </label>
+                <input type="submit" class="submitbuttons" name="upload" value="UPLOAD FILE">
+            </div>
+        </form>
+        <form action="../UploadPreview/fileconversion.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="filename" value="<?php echo $_FILES['document']['name']?>">
+            <input type="submit" class="submitbuttons" id="continue" name="continue" value="PREVIEW DOCUMENT">
+        </form>
+    </div>
 </div>
 </body>
 </html>

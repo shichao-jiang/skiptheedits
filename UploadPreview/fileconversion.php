@@ -85,7 +85,7 @@ class DocxConversion{
 }
 
 // Convert
-$docObj = new DocxConversion($file_name);
+$docObj = new DocxConversion('../' . $file_name);
 $docText= $docObj->convertToText();
 
 // Shrink for Preview
@@ -100,26 +100,32 @@ function custom_echo($x, $length)
     }
 }
 
-$path = $file_name;
+$path = '../' . $file_name;
 !unlink($path);
+
+include($_SERVER['DOCUMENT_ROOT'].'/skiptheedits/skiptheedits/header/header.html');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<link href="uploadpage.css" rel="stylesheet" type="text/css">
+<link href="../default.css" rel="stylesheet" type="text/css">
+<link rel="icon" href="favicon.jpg">
+<header id='#header-main'></header>
 <body>
-    Preview of the File you are About to upload:
+<header id='header-secondary'>
+    <h1>
+    TEXT GORES HERE
+    </h1>    
+</header>    
+    <p style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;"> Preview of the File you are About to upload: </p>
     <br>
     <div type="text" name="preview">
     <?php 
     custom_echo($docText, 900); 
     ?>
     </div>
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="../UploadSuccess/upload.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="body" value="<?php echo $docText; ?>"></input>
     <br>
     <label for="Title">Title:</label>
@@ -130,9 +136,8 @@ $path = $file_name;
     <br>
     <input type="submit" name="submit" value="Upload">
 </form>
-<form action="" method="get">
-    <input type="submit" value="goback" 
-         name="Cancel" id="frm1_submit" />
+<form action="../UploadPage/uploadpage.php">
+    <input type="submit" value="goback" name="Cancel" id="frm1_submit" />
 </form>
 </body>
 </html>
