@@ -1,0 +1,69 @@
+body{
+    background-color: #fbfbfb;
+}
+
+.inputs {
+    column-count: 2;
+    column-rule: 1mm solid black;
+
+}
+
+.logo {
+    position: relative;
+    padding-top: 1cm;
+    padding-left: 1cm;
+}
+
+.existuser{
+    text-align: center;
+    font-family: monospace;
+    
+}
+.existuser button[type = "submit"]{
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    height: 15mm;
+    width: 45mm;
+}
+
+.existuser input[type = "text"]{
+    height: 15mm;
+    width: 45mm;
+}
+
+.existuser input[placeholder]{
+    text-align: center;
+}
+
+.newuser{
+    text-align: center;
+    font-family: monospace;
+}
+
+.newuser button[type = "submit"]{
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    height: 15mm;
+    width: 45mm;
+}
+
+.newuser input[type = "text"]{
+    height: 15mm;
+    width: 45mm;
+}
+
+.newuser input[placeholder]{
+    text-align: center;
+}
+
+.reg {
+    text-align: justify;
+    text-align: center;
+    vertical-align: middle;
+    font-style: normal;
+    font-family: monospace;
+    padding-top: 3cm;
+
+}
