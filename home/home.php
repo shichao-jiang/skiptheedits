@@ -1,5 +1,5 @@
 <?php
-    include_once '../php/server.php';
+    include_once '../server.php';
     include_once '../php/logincheck.php';
 
     if (!isset($_GET['sort'])) {
@@ -19,7 +19,7 @@
     <link rel="icon" type="image/jpg" href="../favicon.jpg">
 </head>
 <body>
-    <?php include_once "${_SERVER['DOCUMENT_ROOT']}/header/header.html" ?>
+    <?php include_once "../header/header.html" ?>
     <header id="header-secondary">
         <h1>Edit an Essay</h1>
         <h2><?php echo count($essays) . " Essays found" ?></h2>
@@ -30,7 +30,7 @@
                 <p class="boxtitle">Search Essays</p>
                 <span id="searchbar">
                     <input type="text" id="searchinput" placeholder="Search...">
-                    <span id="searchbutton" onclick=""><img src="/img/search-icon.png"></span>
+                    <span id="searchbutton" onclick=""><img src="../img/search-icon.png"></span>
                 </span>
                 <a class="button" onclick="">Filter</a>
             </div>
