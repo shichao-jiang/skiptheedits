@@ -32,6 +32,11 @@ body{
     width: 45mm;
 }
 
+.existuser input[type = "password"]{
+    height: 15mm;
+    width: 45mm;
+}
+
 .existuser input[placeholder]{
     text-align: center;
 }
@@ -50,6 +55,11 @@ body{
 }
 
 .newuser input[type = "text"]{
+    height: 15mm;
+    width: 45mm;
+}
+
+.newuser input[type = "password"]{
     height: 15mm;
     width: 45mm;
 }

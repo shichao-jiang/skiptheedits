@@ -20,7 +20,7 @@
     <form method = "POST" action = "Login_Page.php">
     <input type = "text" name = "username" placeholder = "Username">
     <br></br>
-    <input type = "text" name = "password1" placeholder = "Password">
+    <input type = "password" name = "password1" placeholder = "Password">
     <br></br>
     <button type = "submit" name = "login" class = "btn">Next</button>
     </form>
@@ -32,9 +32,9 @@
     <form method= "POST" action = "Login_Page.php">
     <input type = "text" name = "username" placeholder = "Enter Username">
     <br></br>
-    <input type = "text" name = "password1" placeholder = "Enter Password">
+    <input type = "password" name = "password1" placeholder = "Enter Password">
     <br></br>
-    <input type = "text" name = "password2" placeholder = "Confirm Password">
+    <input type = "password" name = "password2" placeholder = "Confirm Password">
     <br></br>
     <button type = "submit" name = "register" class = "btn">Register</button>
     </form>
