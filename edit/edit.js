@@ -91,7 +91,7 @@ function sendEdit(edit) {
         }
     }
 
-    params = "uuid=" + edit.uuid + "&pos=" + edit.pos.top + "&edit=" + edit.edit;
+    params = "uuid=" + edit.uuid + "&pos=" + edit.pos.top + body.scrollTop + "&edit=" + edit.edit;
     xhr.send(params);
 }   
 
@@ -108,8 +108,8 @@ function finish() {
 
     xhr.onload = function() {
         if (this.status == 200) {
-            alert(this.responseText);
-            //window.location.replace('../home/home.php');
+            alert("Edits Submitted");
+            window.location.replace('../home/home.php');
         }
     }
 

@@ -1,21 +1,8 @@
-<?php 
-function custom_echo($x, $length)
-{
-    if(strlen($x)<=$length) {
-        echo $x;
-    }
-    else {
-        $y=substr($x,0,$length) . '...';
-        echo $y;
-    }
-}
-?>
-
 <?php foreach ($essay as $essays): ?>
     <div class="content tile">
         <p class="essayname"><?php echo $essays['title'] ?></p>
         <div class="preview">
-            <?php custom_echo($essays['body'], 900);  ?>
+            <?php echo $essays['body'] ?>
         </div>
         <div class="desc">
             <p class="essaytitle"><?php echo $essays['title'] ?></p>

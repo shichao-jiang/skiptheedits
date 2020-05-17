@@ -8,11 +8,9 @@
     $edit = mysqli_real_escape_string($conn, $_POST['edit']);
     $date = gmdate('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO edits (essay_id, userid, uuid, pos, edit) VALUES ('$essay_id', '$user_id', '$uuid', '$pos', '$edit')";
+    $sql = "INSERT INTO edits (essay_id, userid, uuid, pos, edit, date) VALUES ('$essay_id', '$user_id', '$uuid', '$pos', '$edit', '$date')";
 
-    if (mysqli_query($conn, $sql)) {
-        
-    } else {
+    if (!mysqli_query($conn, $sql)) {
         echo mysqli_error($conn);
     }
 ?>
