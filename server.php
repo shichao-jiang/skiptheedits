@@ -56,32 +56,13 @@ if (isset($_GET['sort'])) {
     $pieces = explode("?", $_SERVER['REQUEST_URI']);
     $page = $pieces[0];
 
-    if ($_GET['sort'] == 'newest') {
-        if ($page == '/home/') {
-            $sql = "SELECT * FROM Essays";
-        } else {
-            $sql = "SELECT * FROM Essays WHERE userId = '$id'";
-        }
-    } else if ($_GET['sort'] == 'premium') {
-        if ($page == '/home/') {
-            $sql = "SELECT * FROM Essays WHERE editorType='premium'";
-        } else {
-            $sql = "SELECT * FROM Essays WHERE editorType='premium' AND userId = '$id'";
-        }
-    } else if ($_GET['sort'] == 'free') {
-        if ($page == '/home/') {
-            $sql = "SELECT * FROM Essays WHERE editorType='free'";
-        } else {
-            $sql = "SELECT * FROM Essays WHERE editorType='free' AND userId = '$id'";
-        }
+    $sql = "SELECT * FROM essays";
+    $result = mysqli_query($conn, $sql);
+    $count = 0;
+    while($data = mysqli_fetch_array($result)) {
+        $count = $count + 1;
+        $essay[] = $data;
     }
-    
-    $result = mysqli_real_escape_string($conn, $sql);
-
-    while ($row = $result->fetch_assoc()) {
-        $essays[] = $row;
-    }
-    $essays = array_reverse($essays);
 }
 
 if (isset($_GET['logout'])) {
