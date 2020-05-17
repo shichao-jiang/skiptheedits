@@ -1,5 +1,6 @@
 <?php
-
+    require_once('../dbconnect.php');
+    require_once('../logincheck.php');
 // File Upload Data
 if(isset($_POST['continue'])) {
     $file_name = $_POST['filename']; 

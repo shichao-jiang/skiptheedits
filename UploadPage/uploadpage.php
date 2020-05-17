@@ -1,4 +1,6 @@
 <?php
+    require_once('../dbconnect.php');
+    require_once('../logincheck.php');
     $msg = "";
     if (isset($_POST['upload'])) {
         $target = "../".basename($_FILES['document']['name']);
