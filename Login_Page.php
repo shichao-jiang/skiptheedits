@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>Sign On</title>
+  <title>Why wait?</title>
   <link rel = "stylesheet" type = "text/css" href = "style.css">
+  <link rel="icon" sizes="15x15" href="favicon.jpg">
  </head>
 
   <body>
-      <img src = "logo.png" class = "logo">
+      <img src = "logod.png" class = "logo">
    <div class = "reg">
    <h1>Let's Get Started</h1>
    <br></br>
-   <h2>or</h2>
+   <h2>OR</h2>
    </div>
 <div class = "inputs">
    <div class = "existuser">
