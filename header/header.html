@@ -1,14 +1,14 @@
 <header id="header-main">
-    <link rel="stylesheet" href="/header/header.css">
-    <img class="navbar-icon" src="/img/logo-nb.png" id="logo"/>
+    <link rel="stylesheet" href="../header/header.css">
+    <img class="navbar-icon" src="../img/logo-nb.png" id="logo"/>
     <span class="navbar-icon" id="iconAvatar">
-        <object class="avatar" data="/img/profile/<?php echo $_SESSION['user']['id'] ?>.png" type="image/png">
-            <img class="avatar" src="/img/profile/default.jpeg">
+        <object class="avatar" data="../img/profile/<?php echo $_SESSION['user']['id'] ?>.png" type="image/png">
+            <img class="avatar" src="../img/profile/default.jpeg">
         </object>
         <span id="menu">
             <div id="user">
-                    <object class="avatar" data="/img/profile/<?php echo $_SESSION['user']['id'] ?>.png" type="image/png">
-                        <img class="avatar" src="/img/profile/default.jpeg">
+                    <object class="avatar" data="../img/profile/<?php echo $_SESSION['user']['id'] ?>.png" type="image/png">
+                        <img class="avatar" src="../img/profile/default.jpeg">
                     </object>
                 <p><?php echo $_SESSION['user']['firstName'] . ' ' . $_SESSION['user']['lastName'] ?></p>
             </div>
@@ -19,12 +19,12 @@
         </span>
     </span>
     <a class="navbar-icon" id="iconNotification">
-        <img src="/img/notification.png"/>
+        <img src="../img/notification.png"/>
     </a>
     <a class="navbar-icon" id="iconUpload" href="/upload/">
-        <img src="/img/upload.png"/>
+        <img src="../img/upload.png"/>
     <a/>
     <a class="navbar-icon" id="iconHome" href="/home/">
-        <img src="/img/home.png"/>
+        <img src="../img/home.png"/>
     </a>
 </header>
