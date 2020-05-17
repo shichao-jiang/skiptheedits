@@ -92,7 +92,7 @@ function sendEdit(edit) {
         }
     }
 
-    params = "uuid=" + edit.uuid + "&pos=" + edit.pos + "&edit=" + edit.edit;
+    params = "uuid=" + edit.uuid + "&pos=" + edit.pos.top + "&edit=" + edit.edit;
     xhr.send(params);
 }   
 

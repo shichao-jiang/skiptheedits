@@ -1,4 +1,4 @@
-<?php include('server.php'); ?>
+<?php include('../server.php'); ?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -17,7 +17,7 @@
 <div class = "inputs">
    <div class = "existuser">
    <h2>Login</h2>
-    <form method = "POST" action = "Login_Page.php">
+    <form method = "POST">
     <input type = "text" name = "username" placeholder = "Username">
     <br></br>
     <input type = "password" name = "password1" placeholder = "Password">
@@ -29,7 +29,7 @@
 
    <div class = "newuser">
    <h2>Register Now</h2>
-    <form method= "POST" action = "Login_Page.php">
+    <form method= "POST">
     <input type = "text" name = "username" placeholder = "Enter Username">
     <br></br>
     <input type = "password" name = "password1" placeholder = "Enter Password">

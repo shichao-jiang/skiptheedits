@@ -1,6 +1,6 @@
 <?php
     include_once '../server.php';
-    include_once '../php/logincheck.php';
+    include_once '../logincheck.php';
 
     if (!isset($_GET['sort'])) {
         header('location: ../home/?sort=newest');
@@ -12,7 +12,7 @@
     <meta enctype="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit an Essay</title>
-    <link href="/default.css" rel="stylesheet"/>
+    <link href="../default.css" rel="stylesheet"/>
     <link href="../header/header.css" rel="stylesheet">
     <link href="home.css" rel="stylesheet"/>
     <link href="../modal.css" rel="stylesheet">

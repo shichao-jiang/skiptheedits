@@ -1,3 +1,8 @@
+<?php
+    require_once('../dbconnect.php');
+    require_once('../logincheck.php');
+?>
+
 <html>
     <title>Edit an Essay</title>
     <link rel="stylesheet" href="edit.css">

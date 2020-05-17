@@ -38,7 +38,7 @@ if (isset($_POST['login'])) {
 
     if (($result->num_rows > 0) and (password_verify($password, $user['password']))) {
         $_SESSION['user'] = array('id' => $user['id'], 'username' => $user['username']);
-        header('location: home');
+        header('location: ../home');
     } else {
         echo "Login Failed";
     }
@@ -60,7 +60,7 @@ if (isset($_GET['sort'])) {
 
 if (isset($_GET['logout'])) {
     session_destroy();
-    header('location: ../login/');
+    header('location: login.php');
 }
 
 ?>

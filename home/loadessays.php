@@ -21,8 +21,8 @@ function custom_echo($x, $length)
             <p class="essaytitle"><?php echo $essays['title'] ?></p>
             <p class=""><?php echo $essays['descrip'] ?></p>
             <div class="buttonbar">
-                <a href="../view?id=<?php echo $essays['id'] ?>">View</a>
-                <a href="../edit?id=<?php echo $essays['id'] ?>">Edit</a>
+                <a href="../view/view.php?id=<?php echo $essays['id'] ?>">View</a>
+                <a href="../edit/edit.php?id=<?php echo $essays['id'] ?>">Edit</a>
             </div>
         </div>
     </div>
