@@ -1,15 +1,13 @@
 let edits = [];
+let body = document.getElementById("body");
 
 function uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
-}
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+  }
 
 function display() {
-    editor = document.getElementById("editor");
-
     edits.forEach(edit => {
         elem = document.getElementById(edit.uuid + "-com");
 
@@ -18,9 +16,9 @@ function display() {
             div.setAttribute("class", "comment");
             div.setAttribute("id", edit.uuid + "-com")
             div.innerHTML = edit.uuid;
-            div.style.top = edit.pos.top;
+            div.style.top = edit.pos.top + body.scrollTop;
             div.style.left = "49rem";
-            editor.appendChild(div);
+            body.appendChild(div);
         }
     });
 }
@@ -66,7 +64,7 @@ function popup(event) {
         var oRect = oRange.getBoundingClientRect();
 
         popup.style.left = oRect.x + (oRect.width / 2) + 'px';
-        popup.style.top = (oRect.bottom + 3) + 'px';
+        popup.style.top = (oRect.bottom + body.scrollTop + 3) + 'px';
         popup.setAttribute("class", "visible");
     } else {
         popup.setAttribute("class", "hidden");
