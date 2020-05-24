@@ -71,6 +71,14 @@
     z-index: 2;
 }
 
+.highlight {
+    background: rgba(255, 255, 0, 0.7);
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
 .hidden {
     visibility: hidden;
 }

@@ -3,9 +3,9 @@ let body = document.getElementById("body");
 
 function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     );
-  }
+}
 
 function display() {
     edits.forEach(edit => {
@@ -23,32 +23,65 @@ function display() {
     });
 }
 
+function hover(id) {
+    var comment = document.getElementById(id + "-com");
+    comment.classList.add("hover");
+}
+
+function out(id) {
+    var comment = document.getElementById(id + "-com");
+    comment.classList.remove("hover");
+}
+
 function edit(type) {
     var gay = document.getElementById("editor");
+    var s = window.getSelection();
 
     var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
+    if (s) {
+        text = s.toString();
     }
 
+    var spans = body.getElementsByTagName("span");
+    var overlap = null;
+
+    for (var i=0; i<spans.length; i++) {
+        if (s.containsNode(spans[i], true)) {
+            overlap = spans[i];
+        }
+    }
+
+    var indexText = s.anchorOffset;
+    var indexText2 = s.focusOffset;
     var index = gay.innerHTML.indexOf(text);
     var index2 = index + text.length;
 
-    if (index <= 0|| index2 < 0 ) {
-        alert("Cannot highlight overlapping text.");
-    } else {
+    if (overlap == null) {
         var uuid = uuidv4();
-        var s = window.getSelection();
         var oRange = s.getRangeAt(0);
         var oRect = oRange.getBoundingClientRect();
         var comment = document.getElementById("comment");
+        
+        if (indexText > indexText2) {
+            var temp = indexText;
+            indexText = indexText2;
+            indexText2 = temp;
+        }
+
+        if (s.anchorNode.previousSibling) {
+            var offset = gay.innerHTML.indexOf(s.anchorNode.previousSibling.outerHTML) + s.anchorNode.previousSibling.outerHTML.length;
+            indexText += offset;
+            indexText2 += offset;
+        }
 
         if (comment.value.length > 0) {
             if (type) {
-                var newtext = gay.innerHTML.slice(0, index) + "<mark id='" + uuid + "'>" + gay.innerHTML.slice(index, index2) + "</mark>" + gay.innerHTML.slice(index2);
+                var newtext = gay.innerHTML.slice(0, indexText) + "<span id='" + uuid + "' class='highlight' onmouseover='hover(\"" + uuid + "\")' onmouseout='out(\"" + uuid + "\")'>"
+                            + gay.innerHTML.slice(indexText, indexText2) + "</span>" + gay.innerHTML.slice(indexText2);
                 gay.innerHTML = newtext;
             } else {
-                var newtext = gay.innerHTML.slice(0, index) + "<span id='" + uuid + "' style='text-decoration:line-through'>" + gay.innerHTML.slice(index, index2) + "</span>" + gay.innerHTML.slice(index2);
+                var newtext = gay.innerHTML.slice(0, indexText) + "<span id='" + uuid + "' class='strike' onmouseover='hover(\"" + uuid + "\")' onmouseout='out(\"" + uuid + "\")'>"
+                            + gay.innerHTML.slice(indexText, indexText2) + "</span>" + gay.innerHTML.slice(indexText2);
                 gay.innerHTML = newtext;
             }
 
@@ -57,7 +90,9 @@ function edit(type) {
             document.getElementById("popup").setAttribute("class", "hidden");
         } else {
             alert("Comment cannot be blank");
-        }    
+        }
+    } else {
+        console.log(overlap);
     }
 }
 
@@ -65,19 +100,15 @@ function popup(event) {
     var popup = document.getElementById("popup");
     var s = window.getSelection();
 
-    var activeEl = document.activeElement.getAttribute("id");
+    if (!s.isCollapsed) {
+        var oRange = s.getRangeAt(0);
+        var oRect = oRange.getBoundingClientRect();
 
-    if (activeEl != "editor") {
-        if (s.toString().length > 0) {
-            var oRange = s.getRangeAt(0);
-            var oRect = oRange.getBoundingClientRect();
-    
-            popup.style.left = oRect.x + (oRect.width / 2) + 'px';
-            popup.style.top = (oRect.bottom + body.scrollTop + 3) + 'px';
-            popup.setAttribute("class", "visible");
-        } else {
-            popup.setAttribute("class", "hidden");
-        }
+        popup.style.left = oRect.x + (oRect.width / 2) + 'px';
+        popup.style.top = (oRect.bottom + body.scrollTop + 3) + 'px';
+        popup.setAttribute("class", "visible");
+    } else {
+        popup.setAttribute("class", "hidden");
     }
 }
 
@@ -93,7 +124,7 @@ function sendEdit(edit) {
 
     params = "uuid=" + edit.uuid + "&pos=" + edit.pos.top + body.scrollTop + "&edit=" + edit.edit;
     xhr.send(params);
-}   
+}
 
 function finish() {
     edits.forEach(edit => {
