@@ -76,11 +76,11 @@ function edit(type) {
 
         if (comment.value.length > 0) {
             if (type) {
-                var newtext = gay.innerHTML.slice(0, indexText) + "<span id='" + uuid + "' class='highlight' onmouseover='hover(\"" + uuid + "\")' onmouseout='out(\"" + uuid + "\")'>"
+                var newtext = gay.innerHTML.slice(0, indexText) + "<span id='" + uuid + "' class='highlight' onmouseover=\"hover('" + uuid + "')\" onmouseout=\"out('" + uuid + "')\">"
                             + gay.innerHTML.slice(indexText, indexText2) + "</span>" + gay.innerHTML.slice(indexText2);
                 gay.innerHTML = newtext;
             } else {
-                var newtext = gay.innerHTML.slice(0, indexText) + "<span id='" + uuid + "' class='strike' onmouseover='hover(\"" + uuid + "\")' onmouseout='out(\"" + uuid + "\")'>"
+                var newtext = gay.innerHTML.slice(0, indexText) + "<span id='" + uuid + "' class='strike' onmouseover=\"hover('" + uuid + "')\" onmouseout=\"out('" + uuid + "')\">"
                             + gay.innerHTML.slice(indexText, indexText2) + "</span>" + gay.innerHTML.slice(indexText2);
                 gay.innerHTML = newtext;
             }

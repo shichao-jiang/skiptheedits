@@ -6,7 +6,6 @@
         header('location: ../home/?sort=newest');
     }
 ?>
-<!doctype html>
 <html lang="en">
 <head>
     <meta enctype="utf-8">
@@ -15,7 +14,6 @@
     <link href="../default.css" rel="stylesheet"/>
     <link href="../header/header.css" rel="stylesheet">
     <link href="home.css" rel="stylesheet"/>
-    <link href="../modal.css" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="../favicon.jpg">
 </head>
 <body>

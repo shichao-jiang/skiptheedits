@@ -24,3 +24,13 @@ function loadedits() {
 
     xhr.send();
 }
+
+function hover(id) {
+    var comment = document.getElementById(id + "-com");
+    comment.classList.add("hover");
+}
+
+function out(id) {
+    var comment = document.getElementById(id + "-com");
+    comment.classList.remove("hover");
+}

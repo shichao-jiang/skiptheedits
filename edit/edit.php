@@ -5,9 +5,13 @@
 ?>
 
 <html>
+<head>
+    <meta enctype="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit an Essay</title>
     <link rel="stylesheet" href="edit.css">
     <link rel="stylesheet" href="../default.css">
+    <link rel="icon" type="image/jpg" href="../favicon.jpg">
 </head>
 <body id="body" style="background-color: rgb(250, 250, 250)">
     <?php include_once "../header/header.html" ?>

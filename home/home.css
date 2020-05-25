@@ -159,6 +159,14 @@ body {
     padding: 0 1.75rem;
 }
 
+.highlight {
+    background: rgba(255, 255, 0, 0.7);
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
 .desc {
     padding: 1rem 0;
     position: absolute;
